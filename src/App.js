@@ -10,6 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import { HashRouter } from 'react-router-dom';
 
 
 
@@ -22,11 +23,11 @@ const App = () => {
     
 
     return (
-              <>
+              <HashRouter basename="/">
                    <div className="markee">
-               <h1 className="main-caption text-center my-5"><marquee behavior="alternate">Helpworx Technology Private Limited</marquee></h1>
+                    <h1 className="main-caption text-center my-5"><marquee behavior="alternate">Helpworx Technology Private Limited</marquee></h1>
                
-               <div className="socialMedia mb-2">
+                <div className="socialMedia mb-2">
                <button className="fb"><FacebookIcon/></button>
                <button  className="twit"><TwitterIcon/></button>
                <button  className="ig"><InstagramIcon/></button>
@@ -51,14 +52,12 @@ const App = () => {
                  
 
                
-                <Switch>
                     <Route exact path="/Personal" component={Personal}/>
                     <Route exact path="/Professional" component={Professional}/>
                     <Route exact path="/Upload" component={Upload}/>
                     <Route exact path="/Varification" component={Varification}/>
-                </Switch>
                
-              </>
+              </HashRouter>
 
     );
 }
